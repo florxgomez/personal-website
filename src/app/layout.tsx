@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { Fira_Sans } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "Florencia Gómez",
@@ -20,12 +21,22 @@ export default function RootLayout({
 }>) {
   return (
     <html
+      suppressHydrationWarning
       lang="en"
       className="h-screen w-screen bg-[url('/Wave.svg')] bg-no-repeat bg-bottom bg-contain"
     >
       <body className={fira.className}>
-        <NavBar />
-        <main className={"space-y-3 mx-10 md:mx-40 "}>{children}</main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NavBar />
+          <main className={"space-y-3 mx-10 md:mx-40 dark:text-gray-200"}>
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

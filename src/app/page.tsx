@@ -66,7 +66,7 @@ export default function Home() {
           <p className="mt-6 text-lg">
             I write{" "}
             <Link href={"/notes"}>
-              <span className="underline underline-offset-4 decoration-4 decoration-primary hover:text-primary">
+              <span className="underline underline-offset-4 decoration-4 decoration-primary hover:text-primary dark:hover:text-primary-dark dark:decoration-primary-dark">
                 notes
               </span>
             </Link>{" "}

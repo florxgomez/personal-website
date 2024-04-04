@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply text-custom-black;
+:root {
+  --popover: white;
+}
+
+.dark {
+  --popover: #121212;
+  --popover-foreground: 210 40% 98%;
 }
