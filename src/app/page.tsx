@@ -15,7 +15,7 @@ export default function Home() {
           height={200}
         />
         <div className={"text-center sm:text-left sm:ml-10"}>
-          <p className="sm:text-xl mt-16 text-md">
+          <p className="sm:text-xl sm:mt-16 mt-6 text-md">
             👋🏻 Hi! I am a Web Developer based in Buenos Aires 🇦🇷, specialized in
             building apps with{" "}
             <span
