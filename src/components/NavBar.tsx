@@ -12,7 +12,7 @@ export default function NavBar() {
           <Link href={"/projects"}>projects</Link>
         </li>
         <li className="hover:text-primary dark:hover:text-primary-dark">
-          <Link href={"/notes"}>notes</Link>
+          <Link href={"/blog"}>blog</Link>
         </li>
         <li className="hover:text-primary dark:hover:text-primary-dark">
           <Link href={"mailto:florxgomez@gmail.com"}>contact</Link>

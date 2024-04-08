@@ -27,6 +27,7 @@ const config = {
         "custom-black": "#252525",
         primary: "#993863",
         "primary-dark": "#d5568e",
+        "primary-transparent": "rgb(150, 56, 99, 10%)",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
