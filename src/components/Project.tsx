@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Project } from "@/types";
+import type { Project } from "@/types";
 
 export default function Project({
   title,

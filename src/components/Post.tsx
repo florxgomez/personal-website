@@ -1,5 +1,5 @@
 import { getTagDecoration } from "@/lib/utils";
-import { Post } from "@/types";
+import type { Post } from "@/types";
 import Link from "next/link";
 
 export default function Post({ slug, title, subtitle, date, tags }: Post) {
