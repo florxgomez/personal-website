@@ -1,6 +1,6 @@
-import { ProjectData } from "../types";
+import { Project } from "../types";
 
-export const projects: ProjectData[] = [
+export const projects: Project[] = [
   {
     repoUrl: "https://github.com/florxgomez/discuss-app",
     title: "discuss",
@@ -15,7 +15,7 @@ export const projects: ProjectData[] = [
     stack: "HTML, CSS, JavaScript",
   },
   {
-    repoUrl: "https://github.com/nhsz/personal-website",
+    repoUrl: "https://github.com/florxgomez/personal-website",
     title: "personal-website",
     description: "My personal website.",
     stack: "NextJS, TypeScript, TailwindCSS, shadcn/ui",
