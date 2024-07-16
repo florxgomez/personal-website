@@ -20,7 +20,7 @@ export default function Project({
           <CardTitle className="text-primary-dark">{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </CardHeader>
-        <CardFooter>
+        <CardFooter className="-mb-3 -mt-1 lg:mb-0 lg:mt-0">
           <p>{stack}</p>
         </CardFooter>
       </Card>
