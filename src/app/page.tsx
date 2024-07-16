@@ -16,8 +16,8 @@ export default function Home() {
         />
         <div className={"text-center sm:text-left sm:ml-10"}>
           <p className="sm:text-xl sm:mt-16 mt-6 text-md">
-            👋🏻 Hi! I am a Web Developer based in Buenos Aires 🇦🇷, specialized in
-            building apps with{" "}
+            👋🏻 Hi! I am a Frontend Engineer based in Buenos Aires 🇦🇷,
+            specialized in building apps with{" "}
             <span
               className={
                 "underline underline-offset-4 decoration-4 decoration-yellow-500"

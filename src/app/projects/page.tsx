@@ -25,9 +25,9 @@ export default function Projects() {
       <h1 className="text-4xl mt-12 font-bold text-primary dark:text-gray-200">
         Projects
       </h1>
-      <section className="mt-16 dark:text-gray-300 text-gray-800">
+      <section className="mt-16 dark:text-gray-300 text-gray-800 sm:h-[100px]">
         <motion.section
-          className="flex justify-center sm:justify-start flex-wrap gap-5 mt-10"
+          className="flex lg:justify-center justify-start flex-wrap gap-2 lg:gap-5 lg:mt-10 mt-4"
           variants={container}
           initial="hidden"
           animate="visible"
