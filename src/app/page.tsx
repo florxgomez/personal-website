@@ -1,6 +1,7 @@
 import Links from "@/components/Links";
 import Image from "next/image";
 import Link from "next/link";
+import "../../public/styles.css";
 
 export default function Home() {
   return (
@@ -16,48 +17,14 @@ export default function Home() {
         />
         <div className={"text-center sm:text-left sm:ml-10"}>
           <p className="sm:text-xl sm:mt-16 mt-6 text-md">
-            👋🏻 Hi! I am a Frontend Engineer based in Buenos Aires 🇦🇷,
-            specialized in building apps with{" "}
-            <span
-              className={
-                "underline underline-offset-4 decoration-4 decoration-yellow-500"
-              }
-            >
-              JavaScript
-            </span>
-            , {""}
-            <span
-              className={
-                "underline underline-offset-4 decoration-4 decoration-blue-500"
-              }
-            >
-              TypeScript
-            </span>
-            ,{" "}
-            <span
-              className={
-                "underline underline-offset-4 decoration-4 decoration-cyan-400"
-              }
-            >
-              React
-            </span>
-            ,{" "}
-            <span
-              className={
-                "underline underline-offset-4 decoration-4 decoration-teal-400"
-              }
-            >
-              TailwindCSS
-            </span>{" "}
-            &{" "}
-            <span
-              className={
-                "underline underline-offset-4 decoration-4 decoration-green-600"
-              }
-            >
-              Node
-            </span>
-            .
+            👋🏻 Hi! I am a{" "}
+            <span className="pink-highlight">Frontend Engineer</span> based in
+            Buenos Aires 🇦🇷, specialized in building apps with{" "}
+            <span className={"yellow-highlight"}>JavaScript</span>, {""}
+            <span className={"darker-blue-highlight"}>TypeScript</span>,{" "}
+            <span className={"blue-highlight"}>React</span>,{" "}
+            <span className={"teal-highlight"}>TailwindCSS</span> &{" "}
+            <span className={"green-highlight"}>Node</span>.
           </p>
           <p className="mt-6 sm:text-lg text-md">
             I am currently working at{" "}
@@ -66,7 +33,7 @@ export default function Home() {
           <p className="mt-6 sm:text-lg text-md">
             I write{" "}
             <Link href={"/blog"}>
-              <span className="underline underline-offset-4 decoration-4 decoration-primary hover:text-primary dark:hover:text-primary-dark dark:decoration-primary-dark">
+              <span className="underline decoration-wavy underline-offset-3 decoration-2 decoration-primary hover:text-primary dark:hover:text-primary-dark dark:decoration-primary-dark">
                 notes
               </span>
             </Link>{" "}
