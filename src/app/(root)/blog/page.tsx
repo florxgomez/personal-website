@@ -1,11 +1,14 @@
 import Post from "@/components/Post";
 import getPostMetadata from "@/components/getPostMetadata";
+import { caps } from "@/font";
 
 export default function Notes() {
   const postMetadata = getPostMetadata();
   return (
     <>
-      <h1 className="text-4xl mt-12 font-bold text-primary dark:text-gray-200 mb-7">
+      <h1
+        className={`text-6xl mt-12 text-primary dark:text-gray-200 mb-5 ${caps.className}`}
+      >
         Blog
       </h1>
 

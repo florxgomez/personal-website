@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../../globals.css";
 import NavBar from "@/components/NavBar";
 import { Fira_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
@@ -14,7 +14,7 @@ const fira = Fira_Sans({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
+export default function PostLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html
       suppressHydrationWarning
       lang="en"
-      className="h-screen w-screen bg-[url('/Wave.svg')] bg-no-repeat bg-bottom bg-contain"
+      className="h-screen w-screen bg-no-repeat bg-bottom bg-contain"
     >
       <body className={fira.className}>
         <ThemeProvider

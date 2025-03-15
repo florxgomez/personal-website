@@ -1,7 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
-import { projects as projectsData } from "../../data/projects";
+import { motion } from "motion/react";
+import { projects as projectsData } from "../../../data/projects";
 import Project from "@/components/Project";
+import { caps } from "@/font";
 
 const container = {
   hidden: { opacity: 0 },
@@ -22,12 +23,14 @@ const item = {
 export default function Projects() {
   return (
     <>
-      <h1 className="text-4xl mt-12 font-bold text-primary dark:text-gray-200">
+      <h1
+        className={`text-6xl mt-12 text-primary dark:text-gray-200 ${caps.className}`}
+      >
         Projects
       </h1>
-      <section className="mt-16 dark:text-gray-300 text-gray-800 sm:h-[100px]">
+      <section className="dark:text-gray-300 text-gray-800 sm:h-[100px]">
         <motion.section
-          className="flex lg:justify-center justify-start flex-wrap gap-2 lg:gap-5 lg:mt-10 mt-4"
+          className="flex justify-start flex-wrap gap-2 lg:gap-5 lg:mt-7 mt-4"
           variants={container}
           initial="hidden"
           animate="visible"
