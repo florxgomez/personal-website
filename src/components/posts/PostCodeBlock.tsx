@@ -4,7 +4,13 @@ import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
 
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
-export function PostCodeBlock({ className, children }) {
+export function PostCodeBlock({
+  className,
+  children,
+}: {
+  className: string;
+  children: string;
+}) {
   console.log(className);
   const language = className.replace("lang-", "");
   return (

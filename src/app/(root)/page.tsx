@@ -7,7 +7,9 @@ import { caps } from "@/font";
 export default function Home() {
   return (
     <>
-      <h1 className={`text-6xl mt-12 ${caps.className}`}>Florencia Gómez</h1>
+      <h1 className={`text-6xl mt-12 ${caps.className}`}>
+        Hello! I&apos;m Flor <span className="text-3xl">🌷</span>
+      </h1>
       <Links />
       <div className={"flex md:flex-row items-center flex-col"}>
         <Image
@@ -18,30 +20,21 @@ export default function Home() {
         />
         <div className={"text-center sm:text-left sm:ml-10"}>
           <p className="sm:text-xl sm:mt-16 mt-6 text-xl">
-            👋🏻 Hi! I&apos;m a Frontend Engineer based in Buenos Aires, Argentina
-            🇦🇷
+            I&apos;m a Frontend Engineer based in Buenos Aires, Argentina 🇦🇷
             <br />
             I&apos;m really into CSS, animation and accessibility. <br />I
             create websites and interactive digital experiences with{" "}
             <span
               className={
-                "underline underline-offset-4 decoration-4 decoration-yellow-500"
+                "underline underline-offset-4 decoration-[3px] decoration-yellow-500"
               }
             >
-              JavaScript
-            </span>
-            , {""}
-            <span
-              className={
-                "underline underline-offset-4 decoration-4 decoration-blue-500"
-              }
-            >
-              TypeScript
+              JavaScript/TypeScript
             </span>
             ,{" "}
             <span
               className={
-                "underline underline-offset-4 decoration-4 decoration-cyan-400"
+                "underline underline-offset-4 decoration-[3px] decoration-cyan-400"
               }
             >
               React
@@ -49,7 +42,7 @@ export default function Home() {
             ,{" "}
             <span
               className={
-                "underline underline-offset-4 decoration-4 decoration-teal-400"
+                "underline underline-offset-4 decoration-[3px] decoration-teal-400"
               }
             >
               TailwindCSS
@@ -57,10 +50,10 @@ export default function Home() {
             &{" "}
             <span
               className={
-                "underline underline-offset-4 decoration-4 decoration-green-600"
+                "underline underline-offset-4 decoration-[3px] decoration-green-600"
               }
             >
-              Node
+              Next
             </span>
             .
           </p>

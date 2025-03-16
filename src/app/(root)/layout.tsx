@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import NavBar from "@/components/NavBar";
-import { Fira_Sans } from "next/font/google";
+import { Fira_Sans, Poppins } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Personal Website",
 };
 
-const fira = Fira_Sans({
+const poppins = Poppins({
   weight: ["400", "500", "600"],
   subsets: ["latin"],
 });
@@ -25,7 +25,7 @@ export default function RootLayout({
       lang="en"
       className="h-screen w-screen bg-[url('/Wave.svg')] bg-no-repeat bg-bottom bg-contain"
     >
-      <body className={fira.className}>
+      <body className={poppins.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
