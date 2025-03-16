@@ -8,6 +8,8 @@ import PostHeading from "@/components/posts/PostHeading";
 import { myFont } from "@/font";
 import { PostCodeBlock } from "@/components/posts/PostCodeBlock";
 import PostSpan from "@/components/posts/PostSpan";
+import PostSection from "@/components/posts/PostSection";
+import PostPoint from "@/components/posts/PostPoint";
 
 const getPostContent = (slug: string) => {
   const postsDirectory = path.join(process.cwd(), "src/posts");
@@ -56,7 +58,13 @@ export default async function Posts(props: any) {
         <Markdown
           className="markdown"
           options={{
-            overrides: { h1: PostHeading, code: PostCodeBlock, span: PostSpan },
+            overrides: {
+              h1: PostHeading,
+              code: PostCodeBlock,
+              span: PostSpan,
+              section: PostSection,
+              li: PostPoint,
+            },
           }}
         >
           {post.content}

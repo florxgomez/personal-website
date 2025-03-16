@@ -25,7 +25,7 @@ export default function RootLayout({
       lang="en"
       className="h-screen w-screen bg-[url('/Wave.svg')] bg-no-repeat bg-bottom bg-contain"
     >
-      <body className={poppins.className}>
+      <body className={`${poppins.className} tracking-wide`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

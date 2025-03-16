@@ -5,12 +5,13 @@ date: "March 14th, 2025"
 tags: "react epic-react react-fundamentals"
 ---
 
+<section>
 # 👋🏻 Hello World in JS
 
-- The browser <span>takes HTML code and generates the DOM out of it</span>.
+- The browser <span>takes HTML code and generates the DOM out of it.</span>
 - It then <span>exposes the DOM to JavaScript</span> so developers can interact with it to add interactivity to their web-page.
-- Modern JS frameworks were created to programmatically create the DOM rather than defining it in hand-written HTML.
-- This approach is more flexible, but comes at the cost of making the browser do a little extra work. This is why hybrid approaches are popular. We can use React to <span>generate the HTML on the server and then use the same React code to add interactivity on the client</span> (Remix makes this easier)
+- Modern JS frameworks were created to programmatically create the DOM rather than defining it in hand-written HTML. This approach is more flexible, but comes at the cost of making the browser do a little extra work. This is why hybrid approaches are popular.
+- We can use React to <span>generate the HTML on the server and then use the same React code to add interactivity on the client</span> (Remix makes this easier)
 - A basic understanding of how to generate and interact with DOM nodes using JS is important to have because it’ll help to understand how React works under the hood.
 
 ```html
@@ -28,15 +29,17 @@ tags: "react epic-react react-fundamentals"
 </html>
 ```
 
+</section>
+<section>
 # ⚛️ Raw React APIs
 
-- React is the most widely used frontend framework and it <span>uses the same DOM APIs when it creates DOM nodes</span>.
+- React is the most widely used frontend framework and it <span>uses the same DOM APIs when it creates DOM nodes.</span>
 - It abstracts away the **imperative** browser API from you to give you a much more **declarative** API to work with.
 
 React <span>supports multiple platforms</span> (native mobile, desktop, web, terminal, VR), each of these has its own code necessary for interacting with that platform and then there’s shared code between the platforms:
 
-- React: responsible for creating React elements
-- ReactDOM: responsible for rendering the React elements to the DOM
+- `React`: responsible for creating React elements
+- `ReactDOM`: responsible for rendering the React elements to the DOM
 
 We typically get these from a package registry (a centralized repository where developers can publish and share reusable code packages) like **npm** where packages we use are.
 
@@ -52,14 +55,14 @@ We typically get these from a package registry (a centralized repository where d
 </script>
 ```
 
-render will take the React elements, turn them into DOM nodes and render them on the page
+`render` will take the React elements, turn them into DOM nodes and render them on the page
 
-- **props**: short for properties, they’re the way we pass data into our elements.
+- **props**: short for properties, they’re the way <span>we pass data into our elements.</span>
 
-- **children**: a special prop in React - it represents the content inside an element. We can specify children:
+- **children**: a special prop in React - it <span>represents the content inside an element</span>. We can specify children:
 
   - as a prop
-  - as multiple arguments to createElement
+  - as multiple arguments to `createElement`
   - as an array
 
 ```js
@@ -70,11 +73,14 @@ const children = ["Hello", " ", "World"];
 const anotherReactElement = createElement("div", props, children);
 ```
 
+</section>
+<section>
 # 👩🏻‍💻 Using JSX
 
 - JSX is more intuitive than raw React APIs and is easier to understand when reading the code.
-- It’s fairly simple <span>HTML-like syntactic sugar on top of the raw React APIs</span>
-- Because JSX is not actually JavaScript, the browser doesn’t understand it, so we have to convert it using a code compiler: **Babel**. Normally, you’ll compile your code at build-time before you ship your app to the browser
+- It’s fairly simple <span>HTML-like syntactic sugar on top of the raw React APIs.</span>
+- Because JSX is not actually JavaScript, the browser doesn’t understand it. We have to convert it using a code compiler: **Babel**.
+- Normally, you’ll compile your code at build-time before you ship your app to the browser.
 
 ```jsx
 const element = <h1 id="greeting">Hey there</h1>;
@@ -86,12 +92,11 @@ const element = createElement("h1", { id: "greeting", children: "Hey there" });
 import * as React from "/react";
 ```
 
-Imports all exports from React as a namespace called React
-
+- Imports all exports from React as a namespace called React
 - It provides access to all React APIs
-- When using JSX, the transpiler will convert JSX elements to React.createElement calls so we need the React namespace in scope.
+- When using JSX, the transpiler will convert JSX elements to `React.createElement` calls so we need the React namespace in scope.
 
-> > **Interpolation**: the insertion of something of a different nature into something else
+  **Interpolation**: the insertion of something of a different nature into something else
 
 ```js
 // template literae
@@ -100,9 +105,8 @@ const subject = 'World'
 const message: `${greeting} ${subject}`
 ```
 
-Sometimes we’ll want to add JS logic of reference a dynamic property inside the markup, here we use curly braces in JSX to open a window to JS
-
-We can forward props using the spread syntax
+Sometimes we’ll want to add JavaScript logic to reference a dynamic property inside the markup, here we use curly braces in JSX to open a window to JS.
+We can forward props using the **spread** syntax.
 
 ```jsx
 const props = {
@@ -114,11 +118,13 @@ element = <div {...props}></div>;
 
 If you have additional props after, those will override the first.
 
-React Fragments allow you to group multiple elements without adding an extra DOM node.
+**React Fragments** allow you to group multiple elements without adding an extra DOM node.
 
-- It lets us return multiple elements side by side from a components without needing a wrapper div —> this happens because JS doesn’t let us assign a variable to two values
-- It’s useful for avoiding unnecessary markup that could affect styling or layout
+- It lets us return multiple elements side by side from a components without needing a wrapper`div` —> this happens because JS doesn’t let us assign a variable to two values.
+- It’s useful for avoiding unnecessary markup that could affect styling or layout.
 
 ```jsx
 const element = <React.Fragment>this is in a fragment</React.Fragment>;
 ```
+
+</section>

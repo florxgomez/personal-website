@@ -11,9 +11,8 @@ export function PostCodeBlock({
   className: string;
   children: string;
 }) {
-  console.log(className);
-  const language = className.replace("lang-", "");
-  return (
+  const language = className?.replace("lang-", "");
+  return className ? (
     <div className="codeBlock">
       <SyntaxHighlighter
         language={language.toLowerCase()}
@@ -28,5 +27,9 @@ export function PostCodeBlock({
         {children}
       </SyntaxHighlighter>
     </div>
+  ) : (
+    <code className={"bg-gray-200 p-1 rounded text-red-500 m-[1px]"}>
+      {children}
+    </code>
   );
 }
