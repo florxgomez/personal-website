@@ -26,15 +26,17 @@ export default function Home() {
             <div className={`${myFont.className} text-5xl mb-3`}>
               hey hello,
             </div>{" "}
-            <div className={`${recoletaSemiBold.className} text-6xl mb-2`}>
+            <div
+              className={`${recoletaSemiBold.className} sm:text-6xl text-5xl mb-2`}
+            >
               I&apos;m Flor
             </div>
           </h1>
         </div>
         <Links />
-        <div className={"flex  items-center flex-col justify-center"}>
+        <div className={"flex items-center flex-col justify-center"}>
           <div className={`text-center ${poppins.className}`}>
-            <p className="sm:text-[20px] mt-10 text-[16px] text-nowrap">
+            <p className="sm:text-[20px] mt-10 text-[16px] sm:text-nowrap">
               I&apos;m a Frontend Engineer based in Buenos Aires, Argentina 🇦🇷
               <br />
               I&apos;m really into CSS, animation and accessibility. <br />I

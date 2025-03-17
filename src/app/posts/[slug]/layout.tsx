@@ -23,7 +23,7 @@ export default function PostLayout({
     <html
       suppressHydrationWarning
       lang="en"
-      className="h-screen w-screen bg-no-repeat bg-bottom bg-contain"
+      className="h-screen w-full bg-no-repeat bg-bottom bg-contain"
     >
       <body className={poppins.className}>
         <ThemeProvider
