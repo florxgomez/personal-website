@@ -8,11 +8,13 @@ tags: "react epic-react react-fundamentals"
 <section>
 # 👋🏻 Hello World in JS
 
-- The browser <span>takes HTML code and generates the DOM out of it.</span>
-- It then <span>exposes the DOM to JavaScript</span> so developers can interact with it to add interactivity to their web-page.
-- Modern JS frameworks were created to programmatically create the DOM rather than defining it in hand-written HTML. This approach is more flexible, but comes at the cost of making the browser do a little extra work. This is why hybrid approaches are popular.
-- We can use React to <span>generate the HTML on the server and then use the same React code to add interactivity on the client</span> (Remix makes this easier)
-- A basic understanding of how to generate and interact with DOM nodes using JS is important to have because it’ll help to understand how React works under the hood.
+- When you load a webpage, the browser <span>takes the HTML and generates the DOM out of it</span> (basically a structured version of your page that JavaScript can manipulate).
+- JavaScript can then interact with the DOM to make the page **dynamic**: things like updating content, handling user input or adding animations.
+- Modern JavaScript frameworks, like React, takes this a step further. Instead of writing all the HTML manually, they generate the DOM programmatically. This makes things more flexible, but also means the browser has to do a bit more work: parsing JavaScript, creating and updating the DOM, etc. That's why hybrid approaches are so popular.
+- With React, we can <span>generate the HTML on the server and then use the same React code to add interactivity on the client</span> (Remix makes this easier)
+- That said, having a basic understanding of how JavaScript creates and interacts with DOM elements is super useful - it helps you see what's happening under the hood in frameworks like React.
+
+Here's a simple example of manually creating and adding an element to the page using plain JavaScript:
 
 ```html
 <html>
@@ -33,38 +35,46 @@ tags: "react epic-react react-fundamentals"
 <section>
 # ⚛️ Raw React APIs
 
-React is the most widely used frontend framework and it <span>uses the same DOM APIs when it creates DOM nodes.</span>
+**React** is the most popular frontend framework, and at its core, it still <span>uses the same DOM APIs that the browser provides.</span>
 <br>
-It abstracts away the **imperative** browser API from you to give you a much more **declarative** API to work with.
+The difference? React abstracts away the low-level, step-by-step **imperative** way of updating the DOM and gives you a **declarative** API to work with - so you can focus on what you want instead of how to do it.
 
-React <span>supports multiple platforms</span> (native mobile, desktop, web, terminal, VR), each of these has its own code necessary for interacting with that platform and then there’s shared code between the platforms:
+React <span>supports multiple platforms</span> (native mobile, desktop, web, terminal, VR), each with its own way of interacting with the platform.
 
-- `React`: responsible for creating React elements
-- `ReactDOM`: responsible for rendering the React elements to the DOM
+Under the hood, React is split into two main parts:
 
-We typically get these from a package registry (a centralized repository where developers can publish and share reusable code packages) like **npm** where packages we use are.
+- `React`: handles creating React elements
+- `ReactDOM`: takes those elements and renders them into the DOM
+
+Most of the time, we install these from **npm**, which is a centralized repository where developers can publish and share reusable code.
+
+Here's a simple example of how React works behind the scenes:
 
 ```html
 <script type="module">
-  import { createElement } from '/react.js'
-  import { createRoot } from '/react-dom/client. js'
-  const rootElement = document.getElementById('root' )
-  const props = { className: 'container', children: 'Hello World' }
-  const element = createElement( 'div', props)
-  const root = createRoot (rootElement)
-  root render (element)
+  import { createElement } from "/react.js";
+  import { createRoot } from "/react-dom/client.js";
+  const rootElement = document.getElementById("root");
+  const props = { className: "container", children: "Hello World" };
+  const element = createElement("div", props);
+  const root = createRoot(rootElement);
+  root.render(element);
 </script>
 ```
 
-`render` will take the React elements, turn them into DOM nodes and render them on the page
+`render` takes the React elements, turns them into real DOM nodes and adds them to the page.
 
-- **props**: short for properties, they’re the way <span>we pass data into our elements.</span>
+In React we use:
 
-- **children**: a special prop in React - it <span>represents the content inside an element</span>. We can specify children:
+- **props** (short for properties) to <span> pass data into our components.</span>
 
-  - as a prop
-  - as multiple arguments to `createElement`
-  - as an array
+- **children**: a special prop, which <span>represents the content inside an element</span>.
+
+We can specify children in different ways:
+
+- as a prop
+- as multiple arguments to `createElement`
+- as an array
 
 ```js
 // as multiple arguments to createElement
@@ -78,93 +88,106 @@ const anotherReactElement = createElement("div", props, children);
 <section>
 # 👩🏻‍💻 Using JSX
 
-- JSX is more intuitive than raw React APIs and is easier to understand when reading the code.
-- It’s fairly simple <span>HTML-like syntactic sugar on top of the raw React APIs.</span>
-- Because JSX is not actually JavaScript, the browser doesn’t understand it. We have to convert it using a code compiler: **Babel**.
-- Normally, you’ll compile your code at build-time before you ship your app to the browser.
+- JSX makes writing React components much easier compared to using raw React APIs.
+- It looks a lot like HTML, making it more readable and intuitive.
+- But there's a catch - JSX isn't actually JavaScript, so browsers don't understand it. That's why **Babel** comes in to convert JSX into regular JavaScript before your code runs.
 
 ```jsx
 const element = <h1 id="greeting">Hey there</h1>;
-
+// gets converted to JavaScript code:
 const element = createElement("h1", { id: "greeting", children: "Hey there" });
 ```
+
+When using JSX, the compiler translates JSX elements into `React.createElement` calls, which means we need to import React for it to work:
 
 ```js
 import * as React from "/react";
 ```
 
-- Imports all exports from React as a namespace called React
-- It provides access to all React APIs
-- When using JSX, the transpiler will convert JSX elements to `React.createElement` calls so we need the React namespace in scope.
+This gives us access to all of React's API under the `React` namespace.
 
-  **Interpolation**: the insertion of something of a different nature into something else
+Sometimes we need to insert JavaScript inside our JSX. We do this using curly braces `{}` - kind of opening a window to JavaScript inside of our markup.
 
 ```js
-// template literae
+// template literal in JavaScript
 const greeting = 'Sup'
 const subject = 'World'
 const message: `${greeting} ${subject}`
+
+// inserting dynamic values in JSX
+const name = 'Flor'
+const element = <h1>Hello, {name}!</h1>
 ```
 
-Sometimes we’ll want to add JavaScript logic to reference a dynamic property inside the markup, here we use curly braces in JSX to open a window to JS.
-We can forward props using the **spread** syntax.
+JSX also lets us **spread props** using the spread syntax `...`. This is useful when forwarding props without explicitly listing them out:
 
 ```jsx
 const props = {
   children: "Hello World",
   className: "container",
 };
+// this spreads all props onto the div
 element = <div {...props}></div>;
 ```
 
-If you have additional props after, those will override the first.
+If you define props after the spread, they'll override the ones inside `props`
 
-**React Fragments** allow you to group multiple elements without adding an extra DOM node.
+Normally, if you return multiple elements from a component, you need to wrap them in a `<div>`. But that adds unnecessary markup that could mess with your styling or layout.
 
-- It lets us return multiple elements side by side from a components without needing a wrapper`div` —> this happens because JS doesn’t let us assign a variable to two values.
-- It’s useful for avoiding unnecessary markup that could affect styling or layout.
+**React Fragments** let you group elements without adding an extra DOM node.
 
 ```jsx
 const element = <React.Fragment>this is in a fragment</React.Fragment>;
 ```
 
+This helps keep your markup clean while avoiding unnecessary wrapper elements.
+
 </section>
 
 <section>
 # 🎨 Custom Components
-Just like in regular JS, when you want to reuse code, you write functions. If you want to share JSX, you can do that as well. In React, we call these **components**.
+In regular JavaScript, when you want to reuse code, you write functions. React works the same way - except instead of returning values, React functions return JSX.
+These functions are called **components**.
 
-React components are functions which accept an object called `props` and return something that is renderable (more React elements, string, null, etc.).
+A React component is just a function that takes in an object called `props` and returns something **renderable** (JSX, a string, `null`, etc.)
+Here's a simple example:
 
 ```jsx
 function Greeting(props) {
-  return <hi>Hello, {props.name}</h1>
+  return <h1>Hello, {props.name}</h1>;
 }
-// that component can be used:
-<Greeting name="Flor" />
+// now we can use it:
+<Greeting name="Flor" />;
 ```
 
-Components can be passed to the `createElement` API:
+Under the hood, React treats components just like regular functions. When using `createElement`, you can pass a function instead of an HTML tag:
 
 ```js
-createElement(someFunction, { prop: value }, childl, child2);
+createElement(someFunction, { prop: value }, child1, child2);
 ```
 
-`someFunction` will be called by React when it’s necessary (when it needs to be rendered on the page) with the `props` object as the first argument and the children will appear as an array in the `children` property of the `props` object
+React will call `someFunction` when it needs to render it on the page. The `props` object includes any attributes and children you pass:
 
 ```jsx
-function someFunction (props) {
-  props.children // ['childl', 'child2'],
-  props.prop // value
-  return // some JSX
+function someFunction(props) {
+  console.log(props.children); // ['child1', 'child2'],
+  console.log(props.prop); // value
+  return <div>{props.children}</div>; // some JSX
+}
 ```
 
-To use JSX with custom components we need a way to tell Babel how to compile our JSX so it passes the function reference: <span>we do this by passing the function name **capitalized**.</span>
+When writing JSX, we need a way to tell Babel how to compile it so React knows which function to call. We do this by using the function name capitalized:
 
 ```jsx
 <SomeFunction prop={value}>[child1, child2]</SomeFunction>
 ```
 
-The API for your component is `props`, which is the object your component function accepts as an argument.
+React will automatically pass `props` into `SomeFunction` and it will return JSX to be rendered on the page.
+
+So, in short:
+
+- **Components are just functions**.
+- They take in `props` and return **JSX**.
+- React handles calling them when needed.
 
 </section>
