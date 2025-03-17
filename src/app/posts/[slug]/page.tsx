@@ -5,7 +5,7 @@ import getPostMetadata from "@/components/getPostMetadata";
 import path from "path";
 import { getTagDecoration } from "@/lib/utils";
 import PostHeading from "@/components/posts/PostHeading";
-import { myFont } from "@/font";
+import { myFont, recoletaSemiBold } from "@/font";
 import { PostCodeBlock } from "@/components/posts/PostCodeBlock";
 import PostSpan from "@/components/posts/PostSpan";
 import PostSection from "@/components/posts/PostSection";
@@ -35,7 +35,7 @@ export default async function Posts(props: any) {
   return (
     <div className="mt-12 space-y-2 h-[100%]">
       <h1
-        className={`font-bold text-4xl text-primary-dark ${myFont.className}`}
+        className={`font-bold text-4xl text-primary-dark ${recoletaSemiBold.className}`}
       >
         {post.data.title}
       </h1>

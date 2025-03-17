@@ -13,7 +13,7 @@ export function PostCodeBlock({
 }) {
   const language = className?.replace("lang-", "");
   return className ? (
-    <div className="codeBlock">
+    <div>
       <SyntaxHighlighter
         language={language.toLowerCase()}
         style={materialDark}
@@ -21,7 +21,7 @@ export function PostCodeBlock({
           padding: "1rem",
           borderRadius: "0.5rem",
           fontSize: "0.8rem",
-          width: "70%",
+          width: "100%",
         }}
       >
         {children}

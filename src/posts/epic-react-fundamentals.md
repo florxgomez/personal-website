@@ -33,8 +33,8 @@ tags: "react epic-react react-fundamentals"
 <section>
 # ⚛️ Raw React APIs
 
-- React is the most widely used frontend framework and it <span>uses the same DOM APIs when it creates DOM nodes.</span>
-- It abstracts away the **imperative** browser API from you to give you a much more **declarative** API to work with.
+React is the most widely used frontend framework and it <span>uses the same DOM APIs when it creates DOM nodes.</span>
+It abstracts away the **imperative** browser API from you to give you a much more **declarative** API to work with.
 
 React <span>supports multiple platforms</span> (native mobile, desktop, web, terminal, VR), each of these has its own code necessary for interacting with that platform and then there’s shared code between the platforms:
 

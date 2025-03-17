@@ -26,7 +26,7 @@ export default function PostSection({ children }: { children: string[] }) {
         <Collapsible.Content>
           <ul>
             {children.slice(1).map((child: string, i: number) => (
-              <li className={"block mb-3"} key={i}>
+              <li className={"block mb-5"} key={i}>
                 {child}
               </li>
             ))}

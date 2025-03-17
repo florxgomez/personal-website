@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { projects as projectsData } from "../../../data/projects";
 import Project from "@/components/Project";
-import { caps } from "@/font";
+import { recoletaBold } from "@/font";
 
 const container = {
   hidden: { opacity: 0 },
@@ -24,7 +24,7 @@ export default function Projects() {
   return (
     <>
       <h1
-        className={`text-6xl mt-12 text-primary dark:text-gray-200 ${caps.className}`}
+        className={`text-5xl mt-12 text-primary dark:text-gray-200 ${recoletaBold.className}`}
       >
         Projects
       </h1>
