@@ -78,7 +78,7 @@
 }
 
 .blue-highlight {
-  display: inline-block;
+  display: inline;
   background: linear-gradient(
       100deg,
       #afd7ff00 1%,

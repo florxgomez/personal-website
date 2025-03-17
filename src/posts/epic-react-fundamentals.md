@@ -34,6 +34,7 @@ tags: "react epic-react react-fundamentals"
 # ⚛️ Raw React APIs
 
 React is the most widely used frontend framework and it <span>uses the same DOM APIs when it creates DOM nodes.</span>
+<br>
 It abstracts away the **imperative** browser API from you to give you a much more **declarative** API to work with.
 
 React <span>supports multiple platforms</span> (native mobile, desktop, web, terminal, VR), each of these has its own code necessary for interacting with that platform and then there’s shared code between the platforms:
@@ -125,6 +126,22 @@ If you have additional props after, those will override the first.
 
 ```jsx
 const element = <React.Fragment>this is in a fragment</React.Fragment>;
+```
+
+</section>
+
+<section>
+# 🎨 Custom Components
+Just like in regular JS, when you want to reuse code, you write functions. If you want to share JSX, you can do that as well. In React, we call these **components**.
+
+React components are functions which accept an object called **props** and return something that is renderable (more React elements, string, null, etc.). They can be passed to the `createElement` API.
+
+```jsx
+function Greeting(props) {
+  return <hi>Hello, {props.name}</h1>
+}
+// that component can be used:
+<Greeting name="Flor" />
 ```
 
 </section>

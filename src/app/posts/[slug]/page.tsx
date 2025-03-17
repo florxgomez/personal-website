@@ -53,7 +53,7 @@ export default async function Posts(props: any) {
       <hr className="border-neutral-300" />
       <article
         className="prose prose-neutral md:prose-lg dark:prose-invert  
-			 dark:prose-a:text-neutral-500 pb-8 w-[80%]"
+			 dark:prose-a:text-neutral-500 pb-8 w-[90%]"
       >
         <Markdown
           className="markdown"
