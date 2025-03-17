@@ -134,7 +134,7 @@ const element = <React.Fragment>this is in a fragment</React.Fragment>;
 # 🎨 Custom Components
 Just like in regular JS, when you want to reuse code, you write functions. If you want to share JSX, you can do that as well. In React, we call these **components**.
 
-React components are functions which accept an object called **props** and return something that is renderable (more React elements, string, null, etc.). They can be passed to the `createElement` API.
+React components are functions which accept an object called `props` and return something that is renderable (more React elements, string, null, etc.).
 
 ```jsx
 function Greeting(props) {
@@ -143,5 +143,28 @@ function Greeting(props) {
 // that component can be used:
 <Greeting name="Flor" />
 ```
+
+Components can be passed to the `createElement` API:
+
+```js
+createElement(someFunction, { prop: value }, childl, child2);
+```
+
+`someFunction` will be called by React when it’s necessary (when it needs to be rendered on the page) with the `props` object as the first argument and the children will appear as an array in the `children` property of the `props` object
+
+```jsx
+function someFunction (props) {
+  props.children // ['childl', 'child2'],
+  props.prop // value
+  return // some JSX
+```
+
+To use JSX with custom components we need a way to tell Babel how to compile our JSX so it passes the function reference: <span>we do this by passing the function name **capitalized**.</span>
+
+```jsx
+<SomeFunction prop={value}>[child1, child2]</SomeFunction>
+```
+
+The API for your component is `props`, which is the object your component function accepts as an argument.
 
 </section>

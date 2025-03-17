@@ -28,7 +28,11 @@ export function PostCodeBlock({
       </SyntaxHighlighter>
     </div>
   ) : (
-    <code className={"bg-gray-200 p-1 rounded text-red-500 m-[1px]"}>
+    <code
+      className={
+        "bg-gray-200 p-1 rounded text-red-500 m-[1px] dark:text-red-500 dark:bg-gray-800"
+      }
+    >
       {children}
     </code>
   );
